@@ -1,43 +1,36 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import UserContext from "../context/UserContext";
 function Updater() {
-  const [user, setuser] = useState("");
-  const [pass, setpass] = useState("");
-  const { setUserName, setPassword } = useContext(UserContext);
-  const HandleSubmit = (e) => {
-    // e.preventDefault();
-    setUserName(user);
-    setPassword(pass);
+  const { setUser, setpass } = useContext(UserContext);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const handleClick = (e) => {
+    e.preventDefault();
+    setUser(username);
+    setpass(password);
   };
-  useEffect(() => {
-    console.log("In");
-    return () => {
-      console.log("Out");
-    };
-  }, [setUserName, setPassword]);
+
   return (
-    <div className="flex flex-col w-1/2 m-auto gap-3">
+    <div className="flex flex-col gap-3 justify-center items-center">
       <input
-        className="rounded px-2 py-1"
+        className="rounded bg-blue-400 placeholder:text-red-500 px-2 py-1"
         type="text"
-        name="userName"
-        placeholder="USer name"
-        value={user}
-        onChange={(e) => setuser(e.target.value)}
+        placeholder="User Name"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
       />
       <input
-        className="rounded px-2 py-1"
-        type="password"
-        name="password"
-        placeholder="Password"
-        value={pass}
-        onChange={(e) => setpass(e.target.value)}
+        className="rounded bg-blue-400 placeholder:text-red-500 px-2 py-1"
+        type="text"
+        placeholder="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
       />
       <button
-        className="px-2 py-1 bg-red-500 rounded"
-        onClick={(e) => HandleSubmit(e)}
+        className="bg-orange-500 text-white px-4 py-1 rounded-lg"
+        onClick={(e) => handleClick(e)}
       >
-        Submit
+        Update
       </button>
     </div>
   );

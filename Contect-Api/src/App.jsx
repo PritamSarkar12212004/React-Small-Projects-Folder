@@ -1,15 +1,15 @@
 import React from "react";
-import UserContextProvider from "./context/UserContextProvider";
-import Profiles from "./components/Profiles";
+import UserContectProvider from "./context/UserContextProvider";
+import Profile from "./components/Profile";
 import Updater from "./components/Updater";
 function App() {
   return (
-    <UserContextProvider>
-      <div className="w-full h-screen bg-zinc-300">
-        <Profiles />
-        <Updater/>
+    <UserContectProvider>
+      <div className="w-full h-screen bg-zinc-400">
+        <Profile />
+        <Updater />
       </div>
-    </UserContextProvider>
+    </UserContectProvider>
   );
 }
 

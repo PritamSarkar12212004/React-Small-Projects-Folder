@@ -1,15 +1,14 @@
-import React from "react";
-import Usercontect from "./UserContext";
+import React, { useState } from "react";
+import UserContext from "./UserContext";
 
-const UserContectProvider = ({ children }) => {
-  const [userName, setUserName] = React.useState(null);
-  const [password, setPassword] = React.useState(null);
+const UserCotextProvier = ({ children }) => {
+  const [user, setUser] = useState("");
+  const [pass, setpass] = useState("");
   return (
-    <Usercontect.Provider
-      value={{ userName, setUserName, password, setPassword }}
-    >
+    <UserContext.Provider value={{ user, setUser, pass, setpass }}>
       {children}
-    </Usercontect.Provider>
+    </UserContext.Provider>
   );
 };
-export default UserContectProvider;
+
+export default UserCotextProvier;
