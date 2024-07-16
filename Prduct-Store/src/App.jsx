@@ -1,15 +1,15 @@
-import React from "react";
-import Home from "./components/Home/Home";
-import ProductContecxtProvider from "./context/Products/ProductContextProvider";
-import RoutesPath from './routes/Routes'
+import RoutesPath from "./routes/Routes";
+import ProductContext from "./context/Products/ProductContext";
+import { useContext } from "react";
 
 function App() {
+  const { theme, settheme } = useContext(ProductContext);
+
+  console.log(theme);
   return (
-    <ProductContecxtProvider>
-      <div>
-       <RoutesPath/>
-      </div>
-    </ProductContecxtProvider>
+    <div className={`${theme ? "bg-White" : "bg-zinc-700"}`}>
+      <RoutesPath />
+    </div>
   );
 }
 

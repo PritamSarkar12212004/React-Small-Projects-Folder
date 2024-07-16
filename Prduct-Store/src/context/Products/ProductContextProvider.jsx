@@ -5,6 +5,7 @@ const ProductContecxtProvider = ({ children }) => {
   const [urlPath, setUrlPath] = useState("");
   const [product, setProduct] = React.useState([]);
   const [recivedData, setRecivedData] = useState([]);
+  const [theme, settheme] = useState(true);
 
   const [cart, setcart] = useState([]);
 
@@ -16,9 +17,7 @@ const ProductContecxtProvider = ({ children }) => {
   useEffect(() => {
     FetchApiProductData();
   }, [urlPath]);
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
+
   return (
     <ProductContext.Provider
       value={{
@@ -29,6 +28,8 @@ const ProductContecxtProvider = ({ children }) => {
         setUrlPath,
         cart,
         setcart,
+        theme,
+        settheme,
       }}
     >
       {children}
