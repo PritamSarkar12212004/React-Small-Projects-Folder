@@ -3,7 +3,7 @@ import ProductContext from "./ProductContext";
 import axios from "axios";
 const ProductContecxtProvider = ({ children }) => {
   const [urlPath, setUrlPath] = useState("");
-  const [product, setProduct] = React.useState([]);
+  const [product, setProduct] = useState([]);
   const [recivedData, setRecivedData] = useState([]);
   const [theme, settheme] = useState(true);
 
@@ -30,6 +30,7 @@ const ProductContecxtProvider = ({ children }) => {
         setcart,
         theme,
         settheme,
+        FetchApiProductData,
       }}
     >
       {children}
