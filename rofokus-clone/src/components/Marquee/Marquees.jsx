@@ -28,9 +28,8 @@ function Marquees() {
     ],
   ];
   return (
-    <div>
+    <div className="mt-20">
       <Marquee
-        ImagesMarquee={ImagesMarquee}
         ImagesMarquee1={ImagesMarquee[0]}
         ImagesMarquee2={ImagesMarquee[1]}
       />

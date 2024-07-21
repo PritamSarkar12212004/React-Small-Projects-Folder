@@ -19,7 +19,7 @@ function Product(prop) {
               <h1 className="text-4xl">{item.Compony}</h1>
               <div className="w-[30%]">
                 <p>{item.Info}</p>
-                <div className={` gap-2 mt-2 ${isHovered ? "flex" : "hidden"}`}>
+                <div className="gap-2 mt-2 flex ">
                   <Button ButtonValu={"Get Product"} />
                   <Button ButtonValu={"See Detels"} />
                 </div>
